@@ -1,6 +1,6 @@
 // Estado de la aplicación
 let estadoApp = {
-    manualActivo: null,
+    manualActivo: 'digital', // Selección por defecto del manual digital
     tareasCompletadas: JSON.parse(localStorage.getItem('tareasCompletadas')) || {}
 };
 
@@ -11,11 +11,12 @@ const toggleTema = document.getElementById('theme-toggle');
 
 // Inicialización
 document.addEventListener('DOMContentLoaded', () => {
-    // Cargar tema desde localStorage
+    // Establecer tema oscuro por defecto si no hay tema guardado
     const temaGuardado = localStorage.getItem('tema');
-    if (temaGuardado === 'dark') {
+    if (temaGuardado === null || temaGuardado === 'dark') {
         document.documentElement.setAttribute('data-theme', 'dark');
         toggleTema.checked = true;
+        localStorage.setItem('tema', 'dark');
     }
 
     // Configurar toggle de tema
@@ -29,10 +30,12 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Cargar manual guardado o el primero por defecto
+    // Cargar manual guardado o el digital por defecto
     const manualGuardado = localStorage.getItem('manualActivo');
     if (manualGuardado && manualesData[manualGuardado]) {
         cargarManual(manualGuardado);
+    } else {
+        cargarManual('digital'); // Cargar manual digital por defecto
     }
 });
 
