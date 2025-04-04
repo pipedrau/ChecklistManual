@@ -1,0 +1,96 @@
+:root {
+    --transition-speed: 0.3s;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+}
+
+/* Animaciones y transiciones */
+.manual-link, .checklist-item {
+    transition: all var(--transition-speed) ease;
+}
+
+.manual-link.active {
+    font-weight: bold;
+    background-color: hsl(var(--p) / 0.2);
+}
+
+/* Personalización del checklist */
+.checklist-section {
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease;
+}
+
+.checklist-subsection {
+    margin: 1rem 0;
+}
+
+.checklist-item {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: flex-start;
+}
+
+.checklist-item.completed .checklist-item-text {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.checklist-item-text {
+    margin-left: 0.5rem;
+    transition: all 0.2s ease;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.progress-container {
+    margin: 1.5rem 0;
+}
+
+/* Estilo de las secciones colapsables */
+.collapse-title {
+    font-weight: bold;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.collapse[open] .collapse-title {
+    background-color: hsl(var(--p) / 0.1);
+}
+
+/* Resumen de progreso */
+.progress-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: hsl(var(--b2) / 0.5);
+}
+
+.progress-value {
+    font-weight: bold;
+    font-size: 1.25rem;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .checklist-item {
+        padding: 0.75rem 0;
+    }
+    
+    .collapse-title {
+        padding: 0.75rem;
+    }
+}
+
+/* Tema oscuro - ajustes específicos */
+[data-theme="dark"] .checklist-item.completed .checklist-item-text {
+    opacity: 0.5;
+} 

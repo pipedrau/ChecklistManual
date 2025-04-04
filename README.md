@@ -1,57 +1,47 @@
-# Checklist para Manuales de Marca
+# Checklist de Manuales de Marca
 
-Aplicación web para seguimiento y gestión de tareas relacionadas con la creación de manuales de marca.
+Una aplicación web simple pero profesional para gestionar las tareas del proceso de creación de manuales de marca.
 
 ## Características
 
-- Checklist interactivo para dos tipos de manuales:
+- Interfaz de usuario limpia y profesional
+- Dos manuales con estructura completa:
   - Manual General de Marca
-  - Manual Digital (Implementación en Plataforma de Apuestas)
-- Seguimiento de progreso con barras de progreso visual
-- Organización jerárquica de tareas y subtareas
-- Funcionalidad para exportar e importar progreso (persistencia local)
-- Diseño moderno y responsivo
+  - Manual Digital (Implementación en Plataforma)
+- Funcionalidad de checklist con guardado automático
+- Seguimiento de progreso por sección y general
+- Diseño responsive para móviles y escritorio
+- Modo claro/oscuro
+- Persistencia de datos mediante localStorage
 
-## Requisitos
+## Tecnologías utilizadas
 
-- Node.js 14.x o superior
-- npm 7.x o superior
+- HTML5
+- CSS3
+- JavaScript vanilla
+- [DaisyUI](https://daisyui.com/) para componentes UI
+- [Tailwind CSS](https://tailwindcss.com/) como framework CSS
 
-## Instalación
+## Cómo usar
 
-1. Clonar el repositorio:
-   ```
-   git clone <url-del-repositorio>
-   cd checklist-manuales
-   ```
+1. Abre el archivo `index.html` en tu navegador
+2. Selecciona un manual del menú lateral
+3. Marca las tareas completadas
+4. El progreso se guarda automáticamente en tu navegador
 
-2. Instalar dependencias:
-   ```
-   npm install
-   ```
+## Estructura del proyecto
 
-3. Iniciar el servidor de desarrollo:
-   ```
-   npm run dev
-   ```
+- `index.html` - Documento principal
+- `public/css/styles.css` - Estilos personalizados
+- `public/js/data.js` - Estructura de datos de los manuales
+- `public/js/app.js` - Lógica de la aplicación
 
-4. Abrir [http://localhost:3000](http://localhost:3000) en el navegador.
+## Personalización
 
-## Uso
-
-- Marcar/desmarcar elementos del checklist haciendo clic en los círculos
-- Expandir/colapsar secciones usando los botones de flecha
-- Exportar progreso con el botón "Exportar progreso"
-- Importar progreso previamente guardado con el botón "Importar progreso"
-
-## Construido con
-
-- [Next.js](https://nextjs.org/) - Framework de React
-- [TypeScript](https://www.typescriptlang.org/) - Superset tipado de JavaScript
-- [Tailwind CSS](https://tailwindcss.com/) - Framework CSS utilitario
-- [DaisyUI](https://daisyui.com/) - Componentes para Tailwind CSS
-- [Lucide React](https://lucide.dev/) - Iconos para React
+- Puedes modificar la estructura de los manuales editando el archivo `public/js/data.js`
+- Ajusta los estilos en `public/css/styles.css`
+- Cambia la funcionalidad en `public/js/app.js`
 
 ## Licencia
 
-Este proyecto está licenciado bajo la Licencia MIT - ver el archivo LICENSE para más detalles. 
+Este proyecto está disponible como código abierto bajo los términos de la licencia MIT. 

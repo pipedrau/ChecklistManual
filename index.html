@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checklist Manuales de Marca</title>
+    <!-- DaisyUI y Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.9.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- CSS personalizado -->
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+<body>
+    <div class="drawer lg:drawer-open">
+        <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+        <div class="drawer-content flex flex-col p-4 md:p-8">
+            <!-- Barra superior para móviles -->
+            <div class="navbar bg-base-100 lg:hidden mb-4 rounded-box shadow">
+                <div class="flex-none">
+                    <label for="my-drawer" class="btn btn-square btn-ghost">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="inline-block w-5 h-5 stroke-current">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </label>
+                </div>
+                <div class="flex-1">
+                    <span class="text-xl font-bold">Checklist Manuales</span>
+                </div>
+            </div>
+
+            <!-- Contenido principal -->
+            <div id="content-container" class="flex-1">
+                <div class="prose max-w-none mb-6">
+                    <h1 class="text-3xl font-bold text-center lg:text-left">Bienvenido al Checklist de Manuales de Marca</h1>
+                    <p>Selecciona un manual en el menú lateral para comenzar a trabajar con su lista de tareas.</p>
+                </div>
+                
+                <!-- El contenido del checklist se cargará aquí dinámicamente -->
+                <div id="checklist-container" class="mt-6"></div>
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="drawer-side">
+            <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+            <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+                <li class="mb-2">
+                    <h2 class="menu-title font-bold text-lg">Manuales de Marca</h2>
+                </li>
+                <li><a id="manual-general" class="manual-link" data-manual="general">Manual General de Marca</a></li>
+                <li><a id="manual-digital" class="manual-link" data-manual="digital">Manual Digital (Implementación)</a></li>
+                
+                <li class="mt-auto">
+                    <div class="flex justify-between items-center mt-4">
+                        <span>Tema</span>
+                        <input id="theme-toggle" type="checkbox" class="toggle toggle-primary" />
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="public/js/data.js"></script>
+    <script src="public/js/app.js"></script>
+</body>
+</html> 
